@@ -19,7 +19,6 @@ class ProductService(
         val productDTOsResult = productDTOs.await()
         sequence {
             for (productDTO in productDTOsResult) {
-                Thread.sleep(1000)
                 yield(
                     Product(
                         productDTO.id,
